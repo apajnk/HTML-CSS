@@ -1,23 +1,82 @@
 body {
-    margin: 0; 
-    padding: 0; 
-    font-family: Inter, sans-serif;
-    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font: "Inter", sans-serif;
+    box-sizing: border-box;
+    background-color: antiquewhite;
 }
 
-h1 {font-size: 50px;}
+h1 {
+    font-size: 50px;
+}
 
-h2 {font-size: 30px;}
+h3 {
+    font-size: 30px;
+}
 
 header {
+    position: fixed;
+    padding: 25px;
     width: 100%;
-    position: relative;
-    padding: 20px 120px;
-    background-color: lightgray;
+    height: 100px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 220, 175);
     box-shadow: 0 0 10px 2px #aaa;
     z-index: 100;
 }
+
+.logo_text {
+    color: blue;
+}
+
+
+.links_wrapper {
+    width: 30%;
+    display: block;
+}
+
+.links_list {
+    width: 70%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.links_list_item > a {
+    color: #aaa;
+    text-decoration: none;
+    transition: .2s all;
+}
+
+.links_list_item > a:hover {
+    color: blue;
+}
+
+.about_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about_section {
+    padding-top:300px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.about_section_header {
+    width: 50%;
+}
+
+.about_section_header::before {
+    content: 'Kilka słów';
+    width: 40px;
+    height: 3px;
+    color: blue;
+}
+
+
