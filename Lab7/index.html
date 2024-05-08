@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Information about you.</h1>
+    <h3>Because we love you.</h3>
+    <h5>Not because we want to know everything about you're life.<3</h5>
+
+    <section class="task1">
+
+        <form action="#" class="task1" method="post">
+
+            <div class="input_wrapper"> 
+                <label for="fname">First name:</label> 
+                <input type="text" id="fname" name="fname" placeholder="Name" required> 
+                <p id="nameError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper">
+                <label for="lname">Last name:</label> 
+                <input type="text" id="lname" name="lname" placeholder="Surname" required> 
+                <p id="lnameError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper">
+                <label for="email">E-mail:</label> 
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required> 
+                <p id="emailError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper">
+                <label for="pass">Password:</label> 
+                <input type="password" id="pass" name="pass" minlength="8" required oninput="validatePasswordMatch()"> 
+                <p id="passwordError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper">
+                <label for="pass2">Repeat password:</label> 
+                <input type="password" id="pass2" name="pass2" minlength="8" required oninput="validatePasswordMatch()"> 
+                <p id="password2Error" class="error-message"></p>
+            </div>      
+
+        </form>
+
+        <h2>Non-required information</h2>
+
+    
+        <form>
+
+            <div class="input_wrapper"> 
+                <label for="sex">Your sex:</label>
+                <select name="sex" id="sex" required>
+                    <optgroup label="Standart">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="bh">Battle Helicopter</option>
+                    </optgroup>
+                </select>
+                <p id="genderError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper"> 
+                <label for="tel">Telephone:</label> 
+                <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11">
+                <p id="phoneError" class="error-message"></p>
+            </div>
+
+            <div class="input_wrapper"> 
+                <label for="dob">Birthday:</label> 
+                <input type="date" id="dob" name="dob">
+                <p id="dobError" class="error-message"></p>
+            </div>  
+
+            <div class="input_wrapper"> 
+                <label for="Country">Country:</label>
+                <select id="cou" name="cou" required onchange="updateVoivodeshipField()">
+                    <option value="poland">Poland</option>
+                    <option value="other">Other</option>
+                    <option value="-" selected="selected">None</option>
+                </select>
+                <p id="countryError" class="error-message"></p>
+            </div>
+            
+            <div class="input_wrapper"> 
+                <label for="wojewodztwo">Województwo:</label>
+                <input type="text" id="wojewodztwo-input" name = 'wojewodztwo' placeholder = 'Województwo' disabled oninput="toggleAddressInput()">
+                <select id="wojewodztwo" name="wojewodztwo" disabled>
+                </select>
+            </div>
+            
+            <div class="input_wrapper"> 
+                <label for="adres">Adres:</label>
+                <input type="text" id="adres" name="adres" disabled>
+            </div>
+
+            <div class="input_wrapper" id="correspondenceAddressWrapper" style="margin-top: 14px; margin-bottom: 10px;"> 
+                <label for="korespondencyjny">Korespondencyjny taki sam jak zamieszkania:</label>
+                <input type="checkbox" id="korespondencyjny" name="korespondencyjny" checked>
+            </div>
+
+            <div class="input_wrapper"> 
+                <input type="submit" id="first_task_submit2" value="Zarejestruj" onclick="return validateForm(event)">
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <h2>Task 2</h2>
+            
+    <section class="quiz_task_section">
+        <form class="quiz_form" id="quiz-form">
+        
+            <div class="input_wrapper">
+                <label for="question">Treść pytania:</label><br>
+                <input type="text" id="question" name="question"><br>
+            </div>
+        
+            <div class="input_wrapper">
+                <label for="answer">Odpowiedź:</label><br>
+                <input type="text" id="answer" name="answer"><br><br>
+            </div>
+        
+            <div class="input_wrapper">
+                <button class="add_question_btn" type="button" onclick="addQuestion()">Dodaj pytanie</button>
+            </div>
+        
+        </form>
+        
+        <div id="question-list"></div>
+        
+    </section>
+            
+</body>
+        
+</html>
+        
+
